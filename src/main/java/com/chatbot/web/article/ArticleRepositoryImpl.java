@@ -1,5 +1,6 @@
-package com.chatbot.web.member;
+package com.chatbot.web.article;
 
+import com.chatbot.web.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
@@ -7,16 +8,16 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-interface MemberRepository extends JpaRepository<Member, Long>, MemberService{}
+interface ArticleRepository extends JpaRepository<Member, Long>, ArticleService{}
 
-interface MemberService{
+interface ArticleService{
     public List<Member> findByAddr(String addr);
 }
 
-public class MemberRepositoryImpl extends QuerydslRepositorySupport implements MemberService{
+public class ArticleRepositoryImpl extends QuerydslRepositorySupport implements ArticleService{
 
-    MemberRepositoryImpl(){
-        super(Member.class);
+    ArticleRepositoryImpl(){
+        super(Article.class);
     }
 
     @Override
