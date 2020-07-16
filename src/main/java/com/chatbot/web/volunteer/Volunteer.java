@@ -12,7 +12,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity@Getter@Setter@ToString@NoArgsConstructor
+@Entity@Getter@Setter@NoArgsConstructor
+@ToString(exclude = {"member","article"})
 @Table(name="volunteer")
 public class Volunteer {
     @Id
